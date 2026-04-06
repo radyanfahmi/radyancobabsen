@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Absensi Karyawan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center font-sans">
+
+    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md text-center">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">Sistem Absensi</h2>
+        <p class="text-gray-500 mb-6 text-sm">Pastikan GPS Anda aktif sebelum melakukan absensi.</p>
+
+        <div id="status-box" class="mb-6 p-4 rounded-lg bg-blue-50 text-blue-700 text-sm border border-blue-200">
+            Mencari lokasi Anda...
+        </div>
+
+        <div class="flex gap-4">
+            <button id="btn-in" onclick="prosesAbsen('masuk')" disabled 
+                class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg transition duration-200 opacity-50 cursor-not-allowed">
+                Absen Masuk
+            </button>
+            <button id="btn-out" onclick="prosesAbsen('pulang')" disabled 
+                class="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-3 rounded-lg transition duration-200 opacity-50 cursor-not-allowed">
+                Absen Pulang
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
