@@ -1,6 +1,6 @@
 const OFFICE_LAT = -7.8228;
 const OFFICE_LNG = 112.0115;
-const MAX_RADIUS = 50; 
+const MAX_RADIUS = 5000; 
 
 function hitungJarak(lat1, lon1, lat2, lon2) {
     const R = 6371e3;
