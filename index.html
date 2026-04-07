@@ -8,7 +8,7 @@
 </head>
 <body class="bg-gray-100 min-h-screen flex items-center justify-center font-sans p-4">
 
-    <div id="login-section" class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
+    <div id="login-section" class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md transition-all">
         <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Login Karyawan</h2>
         <form id="login-form" class="space-y-4">
             <div>
@@ -23,11 +23,38 @@
                 Masuk
             </button>
         </form>
+        <p class="mt-4 text-center text-sm text-gray-600">
+            Karyawan baru? <button onclick="toggleForm('register')" class="text-blue-600 hover:underline font-semibold">Daftar di sini</button>
+        </p>
+    </div>
+
+    <div id="register-section" class="hidden bg-white p-8 rounded-xl shadow-lg w-full max-w-md transition-all">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Daftar Akun Baru</h2>
+        <form id="register-form" class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Nama Lengkap</label>
+                <input type="text" id="reg-nama" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Username</label>
+                <input type="text" id="reg-username" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Password</label>
+                <input type="password" id="reg-password" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-green-500 focus:border-green-500">
+            </div>
+            <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition duration-200">
+                Buat Akun
+            </button>
+        </form>
+        <p class="mt-4 text-center text-sm text-gray-600">
+            Sudah punya akun? <button onclick="toggleForm('login')" class="text-blue-600 hover:underline font-semibold">Login di sini</button>
+        </p>
     </div>
 
     <div id="absen-section" class="hidden bg-white p-8 rounded-xl shadow-lg w-full max-w-md text-center">
         <h2 class="text-2xl font-bold text-gray-800 mb-1">Halo, <span id="nama-karyawan" class="text-blue-600">Nama</span>!</h2>
-        <p class="text-gray-500 mb-6 text-sm">Pastikan GPS Anda aktif sebelum melakukan absensi.</p>
+        <p class="text-gray-500 mb-4 text-sm">ID Anda: <span id="id-karyawan" class="font-mono bg-gray-100 px-2 py-1 rounded"></span></p>
 
         <div id="status-box" class="mb-6 p-4 rounded-lg bg-blue-50 text-blue-700 text-sm border border-blue-200">
             Menunggu sistem...
@@ -36,15 +63,15 @@
         <div class="flex gap-4 mb-4">
             <button id="btn-in" onclick="prosesAbsen('masuk')" disabled 
                 class="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg transition duration-200 opacity-50 cursor-not-allowed">
-                Absen Masuk
+                Masuk
             </button>
             <button id="btn-out" onclick="prosesAbsen('pulang')" disabled 
                 class="w-full bg-red-500 hover:bg-red-600 text-white font-semibold py-3 rounded-lg transition duration-200 opacity-50 cursor-not-allowed">
-                Absen Pulang
+                Pulang
             </button>
         </div>
 
-        <button onclick="logout()" class="text-sm text-gray-500 hover:text-red-500 underline">Logout Keluar</button>
+        <button onclick="logout()" class="text-sm text-gray-500 hover:text-red-500 underline mt-2">Logout Keluar</button>
     </div>
 
     <script src="script.js"></script>
